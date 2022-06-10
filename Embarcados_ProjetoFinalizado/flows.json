@@ -1,0 +1,924 @@
+[
+    {
+        "id": "63b071626009582b",
+        "type": "tab",
+        "label": "Projeto",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "7490596eeaf78930",
+        "type": "mqtt in",
+        "z": "63b071626009582b",
+        "name": "",
+        "topic": "TOPICO_PUBLISH_TEMPERATURA",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "2bc52c51.dbbb94",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 100,
+        "wires": [
+            [
+                "1aa0b12979abda2f",
+                "d016a7f66f793ce8",
+                "9e687970e7d497a0",
+                "d0a5b89d37f9834b",
+                "b721990c274efcee"
+            ]
+        ]
+    },
+    {
+        "id": "1aa0b12979abda2f",
+        "type": "ui_gauge",
+        "z": "63b071626009582b",
+        "name": "",
+        "group": "c379c91c0f5639a0",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperatura Atual",
+        "label": "Celsius",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "30",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "20",
+        "seg2": "30",
+        "className": "",
+        "x": 550,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "3f5cba3ad88c7fa0",
+        "type": "mqtt in",
+        "z": "63b071626009582b",
+        "name": "",
+        "topic": "TOPICO_PUBLISH_UMIDADE",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "7fce14aff5ada2af",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 260,
+        "wires": [
+            [
+                "ecb76d09fb164d0e",
+                "adf79be0f5fe948e",
+                "d12c902e95d233c0",
+                "4fa271689616756f",
+                "353789af36e77c1f"
+            ]
+        ]
+    },
+    {
+        "id": "ecb76d09fb164d0e",
+        "type": "ui_gauge",
+        "z": "63b071626009582b",
+        "name": "",
+        "group": "f055fa0b00036906",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Umidade Atual",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 600,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "adf79be0f5fe948e",
+        "type": "debug",
+        "z": "63b071626009582b",
+        "name": "Humidade",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 610,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "d016a7f66f793ce8",
+        "type": "debug",
+        "z": "63b071626009582b",
+        "name": "Temp",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 550,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "9e687970e7d497a0",
+        "type": "ui_chart",
+        "z": "63b071626009582b",
+        "name": "Temperatura",
+        "group": "c379c91c0f5639a0",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Gráfico da Temperatura",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "35",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 570,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d12c902e95d233c0",
+        "type": "ui_chart",
+        "z": "63b071626009582b",
+        "name": "",
+        "group": "f055fa0b00036906",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Gráfico da Umidade",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "30",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 620,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d9f0e3c98c44f61f",
+        "type": "ui_led",
+        "z": "63b071626009582b",
+        "order": 1,
+        "group": "9ce30764574c10cc",
+        "width": 0,
+        "height": 0,
+        "label": "COOLER",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "0",
+                "valueType": "num"
+            },
+            {
+                "color": "#008000",
+                "value": "1",
+                "valueType": "num"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "square",
+        "showGlow": true,
+        "name": "",
+        "x": 890,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "d0a5b89d37f9834b",
+        "type": "function",
+        "z": "63b071626009582b",
+        "name": "",
+        "func": "msg.payload = Number(msg.payload);\nvar led;\nif (msg.payload <= 23){\n    led = 0;\n}\nif(msg.payload >= 24){\n    led = 1;\n}\nmsg = { \n    payload:led\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 100,
+        "wires": [
+            [
+                "60fa09b69f26a7f2",
+                "d9f0e3c98c44f61f"
+            ]
+        ]
+    },
+    {
+        "id": "60fa09b69f26a7f2",
+        "type": "mqtt out",
+        "z": "63b071626009582b",
+        "name": "",
+        "topic": "ESP32/TEMP",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "7fce14aff5ada2af",
+        "x": 920,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "4fa271689616756f",
+        "type": "function",
+        "z": "63b071626009582b",
+        "name": "",
+        "func": " msg.payload = Number(msg.payload);\n var umidade;\nif(msg.payload <=15){\n    umidade = 0;\n}\nif(msg.payload >=16){\n    umidade = 1;\n}\nmsg = { \n    payload:umidade\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 400,
+        "wires": [
+            [
+                "d68ba05c863fb18d",
+                "e4ac6734cfed59d3"
+            ]
+        ]
+    },
+    {
+        "id": "e4ac6734cfed59d3",
+        "type": "ui_led",
+        "z": "63b071626009582b",
+        "order": 2,
+        "group": "9ce30764574c10cc",
+        "width": 0,
+        "height": 0,
+        "label": "UMIDADE",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "0",
+                "valueType": "num"
+            },
+            {
+                "color": "#008000",
+                "value": "1",
+                "valueType": "num"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 790,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "d68ba05c863fb18d",
+        "type": "mqtt out",
+        "z": "63b071626009582b",
+        "name": "",
+        "topic": "ESP32/UMI",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "7fce14aff5ada2af",
+        "x": 810,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "c75f44733a9f97b3",
+        "type": "inject",
+        "z": "63b071626009582b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 560,
+        "wires": [
+            [
+                "8def8fe4232bd6b4"
+            ]
+        ]
+    },
+    {
+        "id": "8def8fe4232bd6b4",
+        "type": "function",
+        "z": "63b071626009582b",
+        "name": "INSERT",
+        "func": " \nvar temperatura = global.get(\"temperatura\");\nvar humidade = global.get(\"humidade\");\n\nmsg.topic = \"INSERT INTO tabela (temperature,humidity) VALUES (\"+temperatura+\",\"+humidade+\" );\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 560,
+        "wires": [
+            [
+                "2563f05f8bea241d"
+            ]
+        ]
+    },
+    {
+        "id": "b42ee897a32ff764",
+        "type": "debug",
+        "z": "63b071626009582b",
+        "name": "resultado",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "2563f05f8bea241d",
+        "type": "mysql",
+        "z": "63b071626009582b",
+        "mydb": "9beb301a.3454e8",
+        "name": "conexao_mysql",
+        "x": 520,
+        "y": 560,
+        "wires": [
+            [
+                "b42ee897a32ff764"
+            ]
+        ]
+    },
+    {
+        "id": "b721990c274efcee",
+        "type": "function",
+        "z": "63b071626009582b",
+        "name": "global_temperatura",
+        "func": "global.set(\"temperatura\", msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 20,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "353789af36e77c1f",
+        "type": "function",
+        "z": "63b071626009582b",
+        "name": "global_humidade",
+        "func": "global.set(\"humidade\", msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "eecc21aa1f65a23c",
+        "type": "function",
+        "z": "63b071626009582b",
+        "name": "DELET",
+        "func": "\nmsg.topic = \"Delete  FROM tabela ;\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 800,
+        "wires": [
+            [
+                "1eb777edb271be0a"
+            ]
+        ]
+    },
+    {
+        "id": "810590b971636164",
+        "type": "debug",
+        "z": "63b071626009582b",
+        "name": "dados mysql",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 690,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "843e54e49b825045",
+        "type": "inject",
+        "z": "63b071626009582b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 800,
+        "wires": [
+            [
+                "eecc21aa1f65a23c"
+            ]
+        ]
+    },
+    {
+        "id": "1eb777edb271be0a",
+        "type": "mysql",
+        "z": "63b071626009582b",
+        "mydb": "9beb301a.3454e8",
+        "name": "conexao_mysql",
+        "x": 460,
+        "y": 800,
+        "wires": [
+            [
+                "810590b971636164"
+            ]
+        ]
+    },
+    {
+        "id": "136b51193769a3bc",
+        "type": "inject",
+        "z": "63b071626009582b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 620,
+        "wires": [
+            [
+                "168c5ffd98ecaece"
+            ]
+        ]
+    },
+    {
+        "id": "168c5ffd98ecaece",
+        "type": "function",
+        "z": "63b071626009582b",
+        "name": "SELECT",
+        "func": "msg.topic = \"SELECT temperature as temperatura, humidity as humidade, timeStamp as timeStamp FROM tabela where timeStamp >= now() - 84600;\"\nreturn msg;\n\n//msg.topic = \"SELECT * FROM tempLog where timeStamp >= now() - 84600;\"\n\n//msg.topic = \"SELECT temperature as temperatura, humidity as humidade, timeStamp FROM tempLog where timeStamp >= now() - 84600;\"\n\n//msg.topic = \"INSERT INTO tempLog (temperature,humidity) VALUES (\"+temperatura+\",\"+humidade+\" );\"\n\n//SELECT MAX(\"producaocatanduva\") as producao, time FROM \"Solar_IFSP\"  WHERE time >= now() - 30d GROUP BY time(1d)",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 620,
+        "wires": [
+            [
+                "50644c9c349bf8f4"
+            ]
+        ]
+    },
+    {
+        "id": "7fd7e52b0cda8a99",
+        "type": "change",
+        "z": "63b071626009582b",
+        "name": "Format data",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "(\t  $series := [\t    { \"label\": \"temperatura (°C)\" , \"field\": \"temperatura\"  },\t    { \"label\": \"humidade (%)\", \"field\": \"humidade\" }\t\t  ];\t  $xaxis := \"timeStamp\";\t  [\t    {\t      \"series\": $series.label,\t      \"data\": $series.[\t        (\t          $yaxis := $.field;\t          $$.payload.{\t            \"x\": $lookup($, $xaxis),\t            \"y\": $lookup($, $yaxis)\t          }\t        )\t      ]\t    }\t  ]\t)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 650,
+        "y": 620,
+        "wires": [
+            [
+                "f0af05477cb6b9ad",
+                "a84f97ccb14b8a76"
+            ]
+        ]
+    },
+    {
+        "id": "f0af05477cb6b9ad",
+        "type": "ui_chart",
+        "z": "63b071626009582b",
+        "name": "24 hours data",
+        "group": "39bfe7e32e5b3944",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Gráfico temperatura humidade",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#00e68c",
+            "#2d2da8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 840,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "50644c9c349bf8f4",
+        "type": "mysql",
+        "z": "63b071626009582b",
+        "mydb": "9beb301a.3454e8",
+        "name": "conexao_mysql",
+        "x": 440,
+        "y": 620,
+        "wires": [
+            [
+                "7fd7e52b0cda8a99"
+            ]
+        ]
+    },
+    {
+        "id": "a84f97ccb14b8a76",
+        "type": "debug",
+        "z": "63b071626009582b",
+        "name": "debug1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "4551525bfd8ec207",
+        "type": "inject",
+        "z": "63b071626009582b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 720,
+        "wires": [
+            [
+                "9421b392d8d44148"
+            ]
+        ]
+    },
+    {
+        "id": "9421b392d8d44148",
+        "type": "function",
+        "z": "63b071626009582b",
+        "name": "SELECT",
+        "func": "\nmsg.topic = \"SELECT * FROM tabela order by timeStamp DESC limit 10;\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 720,
+        "wires": [
+            [
+                "753ea2ae17cf6489"
+            ]
+        ]
+    },
+    {
+        "id": "47f68241f522e47b",
+        "type": "ui_template",
+        "z": "63b071626009582b",
+        "group": "39bfe7e32e5b3944",
+        "name": "Tabela com style",
+        "order": 2,
+        "width": 12,
+        "height": 6,
+        "format": "<div layout=\"row\" layout-align=\"start center\">\n  <span flex>Hora</span>\n  <span flex>temperatura</span>\n  <span flex>humidade</span>\n</div>\n<div layout=\"row\" layout-align=\"start center\" ng-repeat=\"row in msg.payload\">\n  <span flex style=\"color: green\">{{row.timeStamp}}</span>\n  <span flex style=\"color: red\">{{row.temperature}} °C</span>\n  <span flex style=\"color: black\">{{row.humidity}}%</span>\n\n</div>\n ",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 670,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "753ea2ae17cf6489",
+        "type": "mysql",
+        "z": "63b071626009582b",
+        "mydb": "9beb301a.3454e8",
+        "name": "conexao_mysql",
+        "x": 440,
+        "y": 720,
+        "wires": [
+            [
+                "47f68241f522e47b"
+            ]
+        ]
+    },
+    {
+        "id": "2bc52c51.dbbb94",
+        "type": "mqtt-broker",
+        "name": "mqtt_local",
+        "broker": "projetobrenoifsp.duckdns.org",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "compatmode": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "c379c91c0f5639a0",
+        "type": "ui_group",
+        "name": "Temperatura",
+        "tab": "ac80299dc51646c6",
+        "order": 2,
+        "disp": true,
+        "width": 11,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "7fce14aff5ada2af",
+        "type": "mqtt-broker",
+        "name": "projetobrenoifsp.duckdns.org:1883",
+        "broker": "projetobrenoifsp.duckdns.org",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "f055fa0b00036906",
+        "type": "ui_group",
+        "name": "Umidade",
+        "tab": "ac80299dc51646c6",
+        "order": 1,
+        "disp": true,
+        "width": 11,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "9ce30764574c10cc",
+        "type": "ui_group",
+        "name": "Liga/Desliga Cooler",
+        "tab": "ac80299dc51646c6",
+        "order": 3,
+        "disp": true,
+        "width": 9,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "9beb301a.3454e8",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "database-1.csn8rxfnhoad.us-east-1.rds.amazonaws.com",
+        "port": "3306",
+        "db": "sensor",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "39bfe7e32e5b3944",
+        "type": "ui_group",
+        "name": "Gráfico e tabela de Temperatura e Umidade Basedados",
+        "tab": "95290fec7e2dce8b",
+        "order": 4,
+        "disp": true,
+        "width": 12,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "ac80299dc51646c6",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "95290fec7e2dce8b",
+        "type": "ui_tab",
+        "name": "Gráfico e tabela de Temperatura e Umidade Basedados",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    }
+]
